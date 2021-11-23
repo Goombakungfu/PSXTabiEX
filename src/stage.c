@@ -45,25 +45,14 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 
 //Stage definitions
 #include "character/bf.h"
-#include "character/bfweeb.h"
+#include "character/bfs.h"
 #include "character/dad.h"
-#include "character/spook.h"
-#include "character/pico.h"
-#include "character/mom.h"
-#include "character/xmasp.h"
-#include "character/senpai.h"
-#include "character/senpaim.h"
-#include "character/tank.h"
+#include "character/tabim.h"
 #include "character/gf.h"
-#include "character/clucky.h"
+#include "character/gfs.h"
 
-#include "stage/dummy.h"
-#include "stage/week1.h"
 #include "stage/week2.h"
-#include "stage/week3.h"
 #include "stage/week4.h"
-#include "stage/week5.h"
-#include "stage/week7.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
@@ -275,11 +264,19 @@ static void Stage_MissNote(PlayerState *this)
 {
 	if (this->combo)
 	{
+		if (stage.stage_id <= StageId_1_2)
+		{
 		//Kill combo
 		if (this->combo > 5)
 			stage.gf->set_anim(stage.gf, CharAnim_Down); //Cry if we lost a large combo
-		this->combo = 0;
-		
+			this->combo = 0;
+		}
+			else
+			{
+			if (this->combo > 5)
+			this->combo = 0;
+			}
+
 		//Create combo object telling of our lost combo
 		Obj_Combo *combo = Obj_Combo_New(
 			this->character->focus_x,
@@ -354,7 +351,6 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			
 			//Hit the mine
 			note->type |= NOTE_FLAG_HIT;
-			
 			if (stage.stage_id == StageId_Clwn_4)
 				this->health = -0x7000;
 			else
@@ -1173,7 +1169,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	if (id >= StageId_6_1 && id <= StageId_6_3)
+	if (id == StageId_1_3)
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0WEEB.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
@@ -1429,6 +1425,13 @@ void Stage_Tick(void)
 	{
 		case StageState_Play:
 		{
+
+			//drain hp in genocide
+			if (stage.stage_id == StageId_1_3)
+			{
+				stage.player_state[0].health -= 10;
+			}
+			
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);
 			
