@@ -15,6 +15,7 @@ all: \
 	iso/tabim/main.arc \
 	iso/gf/main.arc \
 	iso/gfs/main.arc \
+	iso/heart/main.arc \
 	iso/gf/speaker.tim \
 	iso/week2/back.arc \
 	iso/week4/back.arc \
@@ -47,6 +48,7 @@ iso/gf/main.arc: iso/gf/bopleft.tim iso/gf/bopright.tim iso/gf/cry.tim
 
 iso/gfs/main.arc: iso/gfs/idle0.tim iso/gfs/idle1.tim
 
+iso/heart/main.arc: iso/heart/idle0.tim iso/heart/idle1.tim iso/heart/idle2.tim iso/heart/idle3.tim iso/heart/idle4.tim iso/heart/idle5.tim iso/heart/idle6.tim iso/heart/idle7.tim
 # Week 2
 iso/week2/back.arc: iso/week2/back0.tim iso/week2/back1.tim
 

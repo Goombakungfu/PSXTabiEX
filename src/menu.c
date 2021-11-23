@@ -22,7 +22,7 @@
 #include "loadscr.h"
 
 #include "stage.h"
-#include "character/gf.h"
+#include "character/heart.h"
 
 //Menu messages
 static const char *funny_messages[][2] = {
@@ -132,7 +132,7 @@ static struct
 	Gfx_Tex tex_back, tex_ng, tex_story, tex_title;
 	FontData font_bold, font_arial;
 	
-	Character *gf; //Title Girlfriend
+	Character *heart; //Title Girlfriend
 } menu;
 
 #ifdef PSXF_NETWORK
@@ -295,7 +295,7 @@ void Menu_Load(MenuPage page)
 	FontData_Load(&menu.font_bold, Font_Bold);
 	FontData_Load(&menu.font_arial, Font_Arial);
 	
-	menu.gf = Char_GF_New(FIXED_DEC(62,1), FIXED_DEC(-12,1));
+	menu.heart = Char_heart_New(FIXED_DEC(0,1), FIXED_DEC(-40,1));
 	stage.camera.x = stage.camera.y = FIXED_DEC(0,1);
 	stage.camera.bzoom = FIXED_UNIT;
 	stage.gf_speed = 4;
@@ -335,7 +335,7 @@ void Menu_Load(MenuPage page)
 void Menu_Unload(void)
 {
 	//Free title Girlfriend
-	Character_Free(menu.gf);
+	Character_Free(menu.heart);
 }
 
 void Menu_ToStage(StageId id, StageDiff diff, boolean story)
@@ -489,7 +489,7 @@ void Menu_Tick(void)
 			u32 x_rad = (logo_scale * (176 >> 1)) >> FIXED_SHIFT;
 			u32 y_rad = (logo_scale * (112 >> 1)) >> FIXED_SHIFT;
 			
-			RECT logo_src = {0, 0, 176, 112};
+			RECT logo_src = {0, 0, 171, 119};
 			RECT logo_dst = {
 				100 - x_rad + (SCREEN_WIDEADD2 >> 1),
 				68 - y_rad,
@@ -511,18 +511,18 @@ void Menu_Tick(void)
 				u8 press_g = (58  + ((press_lerp * (255 - 58))  >> 8)) >> 1;
 				u8 press_b = (206 + ((press_lerp * (255 - 206)) >> 8)) >> 1;
 				
-				RECT press_src = {0, 112, 256, 32};
+				RECT press_src = {0, 119, 256, 21};
 				Gfx_BlitTexCol(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48, press_r, press_g, press_b);
 			}
 			else
 			{
 				//Flash white
-				RECT press_src = {0, (animf_count & 1) ? 144 : 112, 256, 32};
+				RECT press_src = {0, (animf_count & 1) ? 151 : 119, 256, 21};
 				Gfx_BlitTex(&menu.tex_title, &press_src, (SCREEN_WIDTH - 256) / 2, SCREEN_HEIGHT - 48);
 			}
 			
 			//Draw Girlfriend
-			menu.gf->tick(menu.gf);
+			menu.heart->tick(menu.heart);
 			break;
 		}
 		case MenuPage_Main:

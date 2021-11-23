@@ -42,7 +42,6 @@
 			
 			<!-- Week 1 assets -->
 			<dir name = "week1">
-			
 				<!-- Bopeebo charts -->
 				<file name = "1.1e.cht" type = "data" source = "iso/chart/bopeebo-easy.json.cht"/>
 				<file name = "1.1n.cht" type = "data" source = "iso/chart/bopeebo.json.cht"/>
@@ -94,6 +93,8 @@
 				<file name = "speaker.tim" type = "data" source = "iso/gf/speaker.tim"/>
 
 				<file name = "gfs.arc" type = "data" source = "iso/gfs/main.arc"/>
+
+				<file name = "heart.arc" type = "data" source = "iso/heart/main.arc"/>
 	
 			</dir>
 			
