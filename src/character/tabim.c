@@ -20,8 +20,8 @@ enum
 	tabim_ArcMain_Idle3,
 	tabim_ArcMain_Left,
 	tabim_ArcMain_Left1,
+	tabim_ArcMain_Left2,
 	tabim_ArcMain_Left3,
-	tabim_ArcMain_Left4,
 	tabim_ArcMain_Down,
 	tabim_ArcMain_Down1,
 	tabim_ArcMain_Down2,
@@ -65,8 +65,8 @@ static const CharFrame char_tabim_frame[] = {
 	
 	{tabim_ArcMain_Left, {  18,   21,   172, 175}, { 64, 175}},
 	{tabim_ArcMain_Left1,{  18,   16,   170, 176}, { 64, 176}}, 
-	{tabim_ArcMain_Left3,{  23,   16,   169, 180}, { 63, 180}},
-	{tabim_ArcMain_Left4,{  22,   16,   170, 180}, { 63, 180}},
+	{tabim_ArcMain_Left2,{  23,   16,   169, 180}, { 63, 180}},
+	{tabim_ArcMain_Left3,{  22,   16,   170, 180}, { 63, 180}},
 
 	{tabim_ArcMain_Down,  {  0,   0, 131, 167}, { 42, 167}},
 	{tabim_ArcMain_Down1, {  3,   3, 129, 166}, { 42, 166}}, 

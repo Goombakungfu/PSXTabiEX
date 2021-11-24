@@ -20,8 +20,8 @@ enum
 	Dad_ArcMain_Idle3,
 	Dad_ArcMain_Left,
 	Dad_ArcMain_Left1,
+	Dad_ArcMain_Left2,
 	Dad_ArcMain_Left3,
-	Dad_ArcMain_Left4,
 	Dad_ArcMain_Down,
 	Dad_ArcMain_Down1,
 	Dad_ArcMain_Down2,
@@ -54,34 +54,34 @@ typedef struct
 
 //Dad character definitions
 static const CharFrame char_dad_frame[] = {
-	{Dad_ArcMain_Idle0, {  0,   10, 127, 182}, { 51, 182}},
-	{Dad_ArcMain_Idle0, {127,   15, 129, 178}, { 52, 178}},
-	{Dad_ArcMain_Idle1, {  0,   15, 128, 177}, { 52, 177}},
-	{Dad_ArcMain_Idle1, {128 ,  14, 128, 178}, { 51, 178}},
-	{Dad_ArcMain_Idle2, {  0,   14, 128, 178}, { 51, 178}},
-	{Dad_ArcMain_Idle2, {128,   13, 128, 179}, { 50, 179}},
-	{Dad_ArcMain_Idle3, {  0,   12, 128, 180}, { 51, 180}},
-	{Dad_ArcMain_Idle3, {128,   10, 128, 182}, { 51, 182}},
+	{Dad_ArcMain_Idle0, {  0,   9, 114, 194}, { 52, 194}},
+	{Dad_ArcMain_Idle0, {  124,   9, 115, 191}, { 53, 191}},
+	{Dad_ArcMain_Idle1, {  0,   0, 117, 191}, { 53, 191}},
+	{Dad_ArcMain_Idle1, {124 ,  0, 116, 192}, { 53, 192}},
+	{Dad_ArcMain_Idle2, {  0,   0, 113, 190}, { 52, 190}},
+	{Dad_ArcMain_Idle2, {129,   0, 111, 192}, { 50, 192}},
+	{Dad_ArcMain_Idle3, {  0,   0, 110, 191}, { 50, 191}},
+	{Dad_ArcMain_Idle3, {  130,   0, 111, 193}, { 51, 193}},
 	
-	{Dad_ArcMain_Left, {  18,   21,   172, 175}, { 64, 175}},
-	{Dad_ArcMain_Left1,{  18,   16,   170, 176}, { 64, 176}}, 
-	{Dad_ArcMain_Left3,{  23,   16,   169, 180}, { 63, 180}},
-	{Dad_ArcMain_Left4,{  22,   16,   170, 180}, { 63, 180}},
+	{Dad_ArcMain_Left, {  3,   4, 189, 190}, { 76, 190}},
+	{Dad_ArcMain_Left1,{  11,   9, 181, 186}, { 74, 186}},
+	{Dad_ArcMain_Left2,{  12,   9, 180, 187}, { 73, 187}},
+	{Dad_ArcMain_Left3,{  14,   9, 178, 187}, { 73, 187}},
 
-	{Dad_ArcMain_Down,  {  0,   0, 131, 167}, { 42, 167}},
-	{Dad_ArcMain_Down1, {  3,   3, 129, 166}, { 42, 166}}, 
-	{Dad_ArcMain_Down2, {  3,   3, 129, 166}, { 42, 162}}, 
-	{Dad_ArcMain_Down3, {  3,   1, 132, 167}, { 42, 167}}, 
+	{Dad_ArcMain_Down,  {  0,   17, 152, 158}, { 56, 158}},
+	{Dad_ArcMain_Down1, {  0,   17, 152, 161}, { 56, 161}},
+	{Dad_ArcMain_Down2, {  0,   17, 152, 167}, { 56, 167}},
+	{Dad_ArcMain_Down3, {  0,   17, 152, 167}, { 56, 167}},
 	
-	{Dad_ArcMain_Up,  {0,   19, 137, 205}, { 52, 205}},
-	{Dad_ArcMain_Up1, {8,   0, 137, 205}, { 52, 205}}, 
-	{Dad_ArcMain_Up2, {1,   2, 135, 203}, { 52,  203}}, 
-	{Dad_ArcMain_Up3, {1,   3, 134, 203}, { 51, 203}}, 
+	{Dad_ArcMain_Up,  {  0,   17, 138, 208}, { 63, 208}},
+	{Dad_ArcMain_Up1, {  0,   7, 137, 208}, { 63, 208}},
+	{Dad_ArcMain_Up2, {  0,   0, 137, 206}, { 63, 206}}, 
+	{Dad_ArcMain_Up3, {  0,   0, 138, 206}, { 63, 206}},
 	
-	{Dad_ArcMain_Right,  {  35,   23, 197, 178}, { 51, 178}}, 
-	{Dad_ArcMain_Right1, {  41,   23, 194, 178}, { 54, 178}},
-	{Dad_ArcMain_Right2, {  40,   23, 191, 178}, { 53, 178}}, 
-	{Dad_ArcMain_Right3, {  46,   22, 189, 178}, { 53, 178}},
+	{Dad_ArcMain_Right,  {  36,   1, 170, 199}, { 65, 199}},
+	{Dad_ArcMain_Right1, {  40,   0, 171, 201}, { 65, 201}},
+	{Dad_ArcMain_Right2, {  47,   0, 170, 200}, { 64, 200}},
+	{Dad_ArcMain_Right3, {  49,   4, 167, 196}, { 64, 196}},
 };
 
 static const Animation char_dad_anim[CharAnim_Max] = {
@@ -164,7 +164,7 @@ Character *Char_Dad_New(fixed_t x, fixed_t y)
 	this->character.health_i = 1;
 	
 	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_y = FIXED_DEC(-100,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	//Load art
