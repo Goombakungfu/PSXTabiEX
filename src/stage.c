@@ -23,7 +23,7 @@
 #include "object/splash.h"
 
 //Stage constants
-//#define STAGE_PERFECT //Play all notes perfectly
+#define STAGE_PERFECT //Play all notes perfectly
 //#define STAGE_NOHUD //Disable the HUD
 
 //#define STAGE_FREECAM //Freecam
@@ -585,21 +585,12 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	fixed_t wz = dst->w;
 	fixed_t hz = dst->h;
 	
-	if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
-	{
+	
 		//Don't draw if HUD and HUD is disabled
 		#ifdef STAGE_NOHUD
 			return;
 		#endif
-	}
-	else if (stage.stage_id >= StageId_6_1 && stage.stage_id <= StageId_6_3)
-	{
-		//Pixel perfect scrolling in Week 6
-		xz &= FIXED_UAND;
-		yz &= FIXED_UAND;
-		wz &= FIXED_UAND;
-		hz &= FIXED_UAND;
-	}
+	
 	
 	fixed_t l = (SCREEN_WIDTH2  << FIXED_SHIFT) + FIXED_MUL(xz, zoom);// + FIXED_DEC(1,2);
 	fixed_t t = (SCREEN_HEIGHT2 << FIXED_SHIFT) + FIXED_MUL(yz, zoom);// + FIXED_DEC(1,2);
@@ -629,7 +620,7 @@ void Stage_DrawTexArb(Gfx_Tex *tex, const RECT *src, const POINT_FIXED *p0, cons
 {
 	//Don't draw if HUD and HUD is disabled
 	#ifdef STAGE_NOHUD
-		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1)
+		if (tex == &stage.tex_hud0 || tex == &stage.tex_hud1 || tex == &stage.tex_hud1b)
 			return;
 	#endif
 	
@@ -668,9 +659,15 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	};
 	if (stage.downscroll)
 		dst.y = -dst.y - dst.h;
-	
+
 	//Draw health icon
+
+	if (stage.stage_id == StageId_1_3)
+	Stage_DrawTex(&stage.tex_hud1b, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+
+	else
 	Stage_DrawTex(&stage.tex_hud1, &src, &dst, FIXED_MUL(stage.bump, stage.sbump));
+
 }
 
 static void Stage_DrawStrum(u8 i, RECT *note_src, RECT_FIXED *note_dst)
@@ -1169,11 +1166,16 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	if (id == StageId_1_3)
+	if (stage.stage_id == StageId_1_3)
+	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0WEEB.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_hud1b, IO_Read("\\STAGE\\HUD1B.TIM;1"), GFX_LOADTEX_FREE);
+	}
 	else
+    {
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
-	Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1.TIM;1"), GFX_LOADTEX_FREE);
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1.TIM;1"), GFX_LOADTEX_FREE);
+	}
 	
 	//Load stage background
 	Stage_LoadStage();
@@ -1427,10 +1429,7 @@ void Stage_Tick(void)
 		{
 
 			//drain hp in genocide
-			if (stage.stage_id == StageId_1_3)
-			{
-				stage.player_state[0].health -= 10;
-			}
+			
 			
 			//Clear per-frame flags
 			stage.flag &= ~(STAGE_FLAG_JUST_STEP | STAGE_FLAG_SCORE_REFRESH);
@@ -1647,6 +1646,10 @@ void Stage_Tick(void)
 							else
 								opponent_anote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
 							note->type |= NOTE_FLAG_HIT;
+
+							if (stage.stage_id == StageId_1_3)
+				             stage.player_state[0].health -= 90;
+		    
 						}
 					}
 					
@@ -1768,7 +1771,24 @@ void Stage_Tick(void)
 				Stage_DrawHealth(stage.player_state[0].health, stage.player->health_i,    1);
 				Stage_DrawHealth(stage.player_state[0].health, stage.opponent->health_i, -1);
 				
+				//Draw health baralt
+				if (stage.stage_id == StageId_1_3)
+			   {
+				RECT health_fill = {0, 0, 256 - (256 * stage.player_state[0].health / 20000), 8};
+				RECT health_back = {0, 8, 256, 8};
+				RECT_FIXED health_dst = {FIXED_DEC(-128,1), (SCREEN_HEIGHT2 - 32) << FIXED_SHIFT, 0, FIXED_DEC(8,1)};
+				if (stage.downscroll)
+					health_dst.y = -health_dst.y - health_dst.h;
+				
+				health_dst.w = health_fill.w << FIXED_SHIFT;
+				Stage_DrawTex(&stage.tex_hud1b, &health_fill, &health_dst, stage.bump);
+				health_dst.w = health_back.w << FIXED_SHIFT;
+				Stage_DrawTex(&stage.tex_hud1b, &health_back, &health_dst, stage.bump);
+			   }
+				
+				else
 				//Draw health bar
+				{
 				RECT health_fill = {0, 0, 256 - (256 * stage.player_state[0].health / 20000), 8};
 				RECT health_back = {0, 8, 256, 8};
 				RECT_FIXED health_dst = {FIXED_DEC(-128,1), (SCREEN_HEIGHT2 - 32) << FIXED_SHIFT, 0, FIXED_DEC(8,1)};
@@ -1779,6 +1799,10 @@ void Stage_Tick(void)
 				Stage_DrawTex(&stage.tex_hud1, &health_fill, &health_dst, stage.bump);
 				health_dst.w = health_back.w << FIXED_SHIFT;
 				Stage_DrawTex(&stage.tex_hud1, &health_back, &health_dst, stage.bump);
+				}
+
+
+
 			}
 			
 			//Hardcoded stage stuff
