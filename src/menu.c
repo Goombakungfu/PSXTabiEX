@@ -53,14 +53,14 @@ static const char *funny_messages[][2] = {
 	{"WADER", "WHERES THE MENU"},
 	{"PLAYING ON PS CLASSIC HUH", "SAME LOL"},
 	{"NEXT IN LINE", "GARCELLO PORT"},
-	{"RAN OUT OF THINGS", "LUL"},
-	{"HAHAHA", "I DONT CARE"},
+	{"MANGO WHERES", " MY NICK ALL STAR BRAWL"},
+	{"CARESSALIE WILL", "YOU GO OUT WITH ME"},
 	{"GET ME BURGER", "PLZ"},
 	{"THE PORT NAME IS CLEVER", "TO ME"},
 	{"SOMEONE PLEASE", "PORT PICOS SCHOOL"},
 	{"ITS A PORT", "ITS WORSE"},
 	{"IM NO MAN", "IM A MONSTER"},
-	{"CARESSALIE WILL", "YOU GO OUT WITH ME"},
+	{"Ran out of things", "Shoutouts to SImpleflips"},
 };
 
 #ifdef PSXF_NETWORK
@@ -550,7 +550,7 @@ void Menu_Tick(void)
 			
 			//Draw version identification
 			menu.font_bold.draw(&menu.font_bold,
-				"TABI MOD BY HOMSKIY",
+				"PORTERS GOOMBAKUNGFU AND UNSTOPABLE",
 				16,
 				SCREEN_HEIGHT - 32,
 				FontAlign_Left
@@ -894,11 +894,11 @@ void Menu_Tick(void)
 				boolean difficulty;
 			} menu_options[] = {
 				{StageId_Kapi_1, "VS Tabi EX by", false},
-				{StageId_Clwn_1, "     Homskiy", false},
-				{StageId_Clwn_1, "     Tenzubushi", false},
-				{StageId_Clwn_1, "     LAD", false},
-				{StageId_Clwn_1, "     GWEBDEV", false},
-				{StageId_Clwn_1, "     Brightfyer", false},
+				{StageId_Clwn_1, "    Homskiy", false},
+				{StageId_Clwn_1, "    Tenzubushi", false},
+				{StageId_Clwn_1, "    LAD", false},
+				{StageId_Clwn_1, "    GWEBDEV", false},
+				{StageId_Clwn_1, "    Brightfyer", false},
 				{StageId_Clwn_4, "VS TabiPSEX by", false},
 				{StageId_2_4,    " GoombaKungFu", false},
 				{StageId_2_4,    " UNSTOPABLE", false},
