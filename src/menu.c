@@ -41,9 +41,9 @@ static const char *funny_messages[][2] = {
 	{"TABI", "BEST BOI"},
 	{"HEY TABI", "DO YOU LIKE THREE DS"},
 	{"TABIKUNGFU", "thatd be epic"},
-	{"NO BODY", "ITS INVISIBLE"},
-	{"OK OKAY", "WATCH THIS"},
-	{"ITS MORE MALICIOUS", "THAN ANYTHING"},
+	{"HIS BODY", "IS INVISIBLE"},
+	{"GIVE UP", "ALREADY WHITTY"},
+	{"RESPECT UNSTOP", "OFFSETS LOOK AMAZ"},
 	{"USE A CONTROLLER", "COWARD"},
 	{"WHERE CAN I GET", "DAT JACKET"},
 	{"SHITS UNOFFICIAL", "KINDA"},
@@ -550,7 +550,7 @@ void Menu_Tick(void)
 			
 			//Draw version identification
 			menu.font_bold.draw(&menu.font_bold,
-				"GOOMBAKUNGFU AND UNSTOPABLE",
+				"",
 				16,
 				SCREEN_HEIGHT - 32,
 				FontAlign_Left
@@ -796,7 +796,7 @@ void Menu_Tick(void)
 				//{StageId_4_4, "TEST"},
 				{StageId_1_1, "MY BATTLE"},
 				{StageId_1_2, "LAST CHANCE"},
-				{StageId_1_3, "GENOCIDEE"},
+				{StageId_1_3, "GENOCIDE"},
 			};
 			
 			//Initialize page
@@ -899,7 +899,7 @@ void Menu_Tick(void)
 				{StageId_Clwn_1, "    LAD", false},
 				{StageId_Clwn_1, "    GWEBDEV", false},
 				{StageId_Clwn_1, "    Brightfyer", false},
-				{StageId_Clwn_4, "VS TabiPSEX by", false},
+				{StageId_Clwn_4, "VS Tabi PS-EX by", false},
 				{StageId_2_4,    " GoombaKungFu", false},
 				{StageId_2_4,    " UNSTOPABLE", false},
 				{StageId_2_4,    " IgorSou", false},
