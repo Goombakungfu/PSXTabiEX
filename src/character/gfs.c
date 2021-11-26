@@ -53,14 +53,14 @@ typedef struct
 
 //Christmas Parents definitions
 static const CharFrame char_gfs_frame[] = {
-	{gfs_ArcMain_Idle0, {0,    0,   83, 106}, {29, 106}},
-	{gfs_ArcMain_Idle0, {83,   0,   79, 107}, {28, 107}},
-	{gfs_ArcMain_Idle0, {162,  0,   77, 107}, {28, 107}}, 
-	{gfs_ArcMain_Idle0, {0,    106, 79, 108}, {29, 108}}, 
-	{gfs_ArcMain_Idle0, {79,   107, 81, 110}, {28, 110}},
-	{gfs_ArcMain_Idle0, {160,  107, 79, 111}, {28, 111}},
-	{gfs_ArcMain_Idle1, {0,    0,   80, 111}, {29, 111}}, 
-	{gfs_ArcMain_Idle1, {0,    0,   79, 111}, {28, 111}}, 
+	{gfs_ArcMain_Idle0, {0,    0,   83, 106}, {51, 106}},
+	{gfs_ArcMain_Idle0, {83,   0,   79, 107}, {48, 107}},
+	{gfs_ArcMain_Idle0, {162,  0,   77, 107}, {46, 107}}, 
+	{gfs_ArcMain_Idle0, {0,    106, 79, 108}, {48, 108}}, 
+	{gfs_ArcMain_Idle0, {79,   107, 81, 110}, {48, 110}},
+	{gfs_ArcMain_Idle0, {160,  107, 79, 111}, {46, 111}},
+	{gfs_ArcMain_Idle1, {0,    0,   80, 111}, {47, 111}}, 
+	{gfs_ArcMain_Idle1, {0,    0,   79, 111}, {46, 111}}, 
 };
 
 static const Animation char_gfs_anim[CharAnim_Max] = {
