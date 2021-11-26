@@ -264,7 +264,7 @@ static void Menu_DrawWeek(const char *week, s32 x, s32 y)
 	else
 	{
 		//Week
-		RECT label_src = {0, 32, 80, 32};
+		RECT label_src = {0, 32, 83, 32};
 		Gfx_BlitTex(&menu.tex_story, &label_src, x, y);
 		
 		//Number
