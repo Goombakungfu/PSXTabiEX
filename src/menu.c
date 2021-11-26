@@ -26,41 +26,41 @@
 
 //Menu messages
 static const char *funny_messages[][2] = {
-	{"PSX PORT BY CUCKYDEV", "YOU KNOW IT"},
-	{"PORTED BY CUCKYDEV", "WHAT YOU GONNA DO"},
-	{"FUNKIN", "FOREVER"},
-	{"WHAT THE HELL", "RITZ PSX"},
-	{"LIKE PARAPPA", "BUT COOLER"},
-	{"THE JAPI", "EL JAPI"},
-	{"PICO FUNNY", "PICO FUNNY"},
-	{"OPENGL BACKEND", "BY CLOWNACY"},
-	{"CUCKYFNF", "SETTING STANDARDS"},
-	{"lool", "inverted colours"},
-	{"NEVER LOOK AT", "THE ISSUE TRACKER"},
-	{"PSXDEV", "HOMEBREW"},
-	{"ZERO POINT ZERO TWO TWO EIGHT", "ONE FIVE NINE ONE ZERO FIVE"},
-	{"DOPE ASS GAME", "PLAYSTATION MAGAZINE"},
-	{"NEWGROUNDS", "FOREVER"},
-	{"NO FPU", "NO PROBLEM"},
+	{"Ludum dare", "Pretty coolz"},
+	{"ITS TABI", "NOT TAWBI"},
+	{"ILL RAP YOU", "WITH MY LOVE"},
+	{"GENOCIDE", "IS BADASS"},
+	{"HE IS HUMAN", "REMEBER THAT"},
+	{"EDGY EMO", "yeah right"},
+	{"TABI", "TRY TINDER"},
+	{"DUNKTASTIC", "XD"},
+	{"TABI IS TALL", "idk y"},
+	{"She", "betrayed me"},
+	{"Tenzubushi", "AMAZING MOOSIC"},
+	{"RUSSIAN", "GOAT"},
+	{"TABI", "BEST BOI"},
+	{"HEY TABI", "DO YOU LIKE THREE DS"},
+	{"TABIKUNGFU", "thatd be epic"},
+	{"NO BODY", "ITS INVISIBLE"},
 	{"OK OKAY", "WATCH THIS"},
 	{"ITS MORE MALICIOUS", "THAN ANYTHING"},
-	{"USE A CONTROLLER", "LOL"},
-	{"SNIPING THE KICKSTARTER", "HAHA"},
-	{"SHITS UNOFFICIAL", "NOT A PROBLEM"},
-	{"SYSCLK", "RANDOM SEED"},
-	{"THEY DIDNT HIT THE GOAL", "STOP"},
-	{"FCEFUWEFUETWHCFUEZDSLVNSP", "PQRYQWENQWKBVZLZSLDNSVPBM"},
-	{"PSXFUNKIN BY CUCKYDEV", "SUCK IT DOWN"},
-	{"PLAYING ON EPSXE HUH", "YOURE THE PROBLEM"},
-	{"NEXT IN LINE", "ATARI"},
-	{"HAXEFLIXEL", "COME ON"},
+	{"USE A CONTROLLER", "COWARD"},
+	{"WHERE CAN I GET", "DAT JACKET"},
+	{"SHITS UNOFFICIAL", "KINDA"},
+	{"I GOT PERMISSION", "TO PORT THIS"},
+	{"THIS WAS HARD", "PLZ RESPECT"},
+	{"WE ARE AN", "UNSTOPABLE FORCE"},
+	{"WADER", "WHERES THE MENU"},
+	{"PLAYING ON PS CLASSIC HUH", "SAME LOL"},
+	{"NEXT IN LINE", "GARCELLO PORT"},
+	{"RAN OUT OF THINGS", "LUL"},
 	{"HAHAHA", "I DONT CARE"},
-	{"GET ME TO STOP", "TRY"},
-	{"FNF MUKBANG GIF", "THATS UNRULY"},
-	{"OPEN SOURCE", "FOREVER"},
+	{"GET ME BURGER", "PLZ"},
+	{"THE PORT NAME IS CLEVER", "TO ME"},
+	{"SOMEONE PLEASE", "PORT PICOS SCHOOL"},
 	{"ITS A PORT", "ITS WORSE"},
-	{"WOW GATO", "WOW GATO"},
-	{"BALLS FISH", "BALLS FISH"},
+	{"IM NO MAN", "IM A MONSTER"},
+	{"CARESSALIE WILL", "YOU GO OUT WITH ME"},
 };
 
 #ifdef PSXF_NETWORK
@@ -398,24 +398,25 @@ void Menu_Tick(void)
 				switch (beat)
 				{
 					case 3:
-						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 48, FontAlign_Center);
 				//Fallthrough
 					case 2:
 					case 1:
-						menu.font_bold.draw(&menu.font_bold, "NINJAMUFFIN",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "PHANTOMARCADE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "KAWAISPRITE",   SCREEN_WIDTH2, SCREEN_HEIGHT2,      FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "EVILSKER",      SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "HOMSKIY",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "TENZUBUSHI", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "LAD",   SCREEN_WIDTH2, SCREEN_HEIGHT2,      FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "GWEBDEV",      SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "BRIGHTFYER",      SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
 						break;
 					
 					case 7:
-						menu.font_bold.draw(&menu.font_bold, "NEWGROUNDS",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
 						Gfx_BlitTex(&menu.tex_ng, &src_ng, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 16);
 				//Fallthrough
 					case 6:
 					case 5:
-						menu.font_bold.draw(&menu.font_bold, "IN ASSOCIATION", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "WITH",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "THE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "TABI DUDE",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
 						break;
 					
 					case 11:
@@ -427,13 +428,13 @@ void Menu_Tick(void)
 						break;
 					
 					case 15:
-						menu.font_bold.draw(&menu.font_bold, "FUNKIN", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "TABI", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
 				//Fallthrough
 					case 14:
-						menu.font_bold.draw(&menu.font_bold, "NIGHT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "VS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
 				//Fallthrough
 					case 13:
-						menu.font_bold.draw(&menu.font_bold, "FRIDAY", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "FNF", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
 						break;
 				}
 				break;
@@ -530,7 +531,7 @@ void Menu_Tick(void)
 			static const char *menu_options[] = {
 				"STORY MODE",
 				"FREEPLAY",
-				"MODS",
+				"CREDITS",
 				"OPTIONS",
 				#ifdef PSXF_NETWORK
 					"JOIN SERVER",
@@ -549,7 +550,7 @@ void Menu_Tick(void)
 			
 			//Draw version identification
 			menu.font_bold.draw(&menu.font_bold,
-				"PSXFUNKIN BY CUCKYDEV",
+				"TABI MOD BY HOMSKIY",
 				16,
 				SCREEN_HEIGHT - 32,
 				FontAlign_Left
@@ -670,14 +671,7 @@ void Menu_Tick(void)
 				const char *name;
 				const char *tracks[3];
 			} menu_options[] = {
-				{NULL, StageId_1_4, "TUTORIAL", {"TUTORIAL", NULL, NULL}},
-				{"1", StageId_1_1, "DADDY DEAREST", {"BOPEEBO", "FRESH", "DADBATTLE"}},
-				{"2", StageId_2_1, "SPOOKY MONTH", {"SPOOKEEZ", "SOUTH", "MONSTER"}},
-				{"3", StageId_3_1, "PICO", {"PICO", "PHILLY NICE", "BLAMMED"}},
-				{"4", StageId_4_1, "MOMMY MUST MURDER", {"SATIN PANTIES", "HIGH", "MILF"}},
-				{"5", StageId_5_1, "RED SNOW", {"COCOA", "EGGNOG", "WINTER HORRORLAND"}},
-				{"6", StageId_6_1, "HATING SIMULATOR", {"SENPAI", "ROSES", "THORNS"}},
-				{"7", StageId_7_1, "TANKMAN", {"UGH", "GUNS", "STRESS"}},
+				{"1", StageId_1_1, "CURSE", {"MY BATTLE", "LAST CHANCE", "GENOCIDE"}},
 			};
 			
 			//Initialize page
@@ -800,28 +794,9 @@ void Menu_Tick(void)
 				const char *text;
 			} menu_options[] = {
 				//{StageId_4_4, "TEST"},
-				{StageId_1_4, "TUTORIAL"},
-				{StageId_1_1, "BOPEEBO"},
-				{StageId_1_2, "FRESH"},
-				{StageId_1_3, "DADBATTLE"},
-				{StageId_2_1, "SPOOKEEZ"},
-				{StageId_2_2, "SOUTH"},
-				{StageId_2_3, "MONSTER"},
-				{StageId_3_1, "PICO"},
-				{StageId_3_2, "PHILLY NICE"},
-				{StageId_3_3, "BLAMMED"},
-				{StageId_4_1, "SATIN PANTIES"},
-				{StageId_4_2, "HIGH"},
-				{StageId_4_3, "MILF"},
-				{StageId_5_1, "COCOA"},
-				{StageId_5_2, "EGGNOG"},
-				{StageId_5_3, "WINTER HORRORLAND"},
-				{StageId_6_1, "SENPAI"},
-				{StageId_6_2, "ROSES"},
-				{StageId_6_3, "THORNS"},
-				{StageId_7_1, "UGH"},
-				{StageId_7_2, "GUNS"},
-				{StageId_7_3, "STRESS"},
+				{StageId_1_1, "MY BATTLE"},
+				{StageId_1_2, "LAST CHANCE"},
+				{StageId_1_3, "GENOCIDEE"},
 			};
 			
 			//Initialize page
@@ -918,10 +893,19 @@ void Menu_Tick(void)
 				const char *text;
 				boolean difficulty;
 			} menu_options[] = {
-				{StageId_Kapi_1, "VS KAPI", false},
-				{StageId_Clwn_1, "VS TRICKY", true},
-				{StageId_Clwn_4, "   EXPURGATION", false},
-				{StageId_2_4,    "CLUCKED", false},
+				{StageId_Kapi_1, "VS Tabi EX by", false},
+				{StageId_Clwn_1, "     Homskiy", false},
+				{StageId_Clwn_1, "     Tenzubushi", false},
+				{StageId_Clwn_1, "     LAD", false},
+				{StageId_Clwn_1, "     GWEBDEV", false},
+				{StageId_Clwn_1, "     Brightfyer", false},
+				{StageId_Clwn_4, "VS TabiPSEX by", false},
+				{StageId_2_4,    " GoombaKungFu", false},
+				{StageId_2_4,    " UNSTOPABLE", false},
+				{StageId_2_4,    " IgorSou", false},
+				{StageId_2_4,    "PSXFunkin by", false},
+				{StageId_2_4,    "  Cuckydev", false},
+				{StageId_2_4,    "", false},
 			};
 			
 			//Initialize page
@@ -933,7 +917,7 @@ void Menu_Tick(void)
 			
 			//Draw page label
 			menu.font_bold.draw(&menu.font_bold,
-				"MODS",
+				"CREDITS",
 				16,
 				SCREEN_HEIGHT - 32,
 				FontAlign_Left
@@ -962,16 +946,6 @@ void Menu_Tick(void)
 						menu.select = 0;
 				}
 				
-				//Select option if cross is pressed
-				if (pad_state.press & (PAD_START | PAD_CROSS))
-				{
-					menu.next_page = MenuPage_Stage;
-					menu.page_param.stage.id = menu_options[menu.select].stage;
-					menu.page_param.stage.story = true;
-					if (!menu_options[menu.select].difficulty)
-						menu.page_param.stage.diff = StageDiff_Hard;
-					Trans_Start();
-				}
 				
 				//Return to main menu if circle is pressed
 				if (pad_state.press & PAD_CIRCLE)
