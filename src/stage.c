@@ -46,6 +46,7 @@ static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
 //Stage definitions
 #include "character/bf.h"
 #include "character/bfs.h"
+#include "character/bfb.h"
 #include "character/dad.h"
 #include "character/tabim.h"
 #include "character/gf.h"

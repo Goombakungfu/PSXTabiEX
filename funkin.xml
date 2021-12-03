@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Defines the ISO project -->
-<iso_project image_name="funkin.bin" cue_sheet="funkin.cue" no_xa="0">
+<iso_project image_name="TabiPS_EX.bin" cue_sheet="TabiPS_EX.cue" no_xa="0">
 	<!-- Data track -->
 	<track type="data">
 		<!-- Identifiers -->
@@ -81,6 +81,8 @@
 				<file name = "bfs.arc" type = "data" source = "iso/bfs/main.arc"/>
 				<file name = "bfsdead.arc" type = "data" source = "iso/bfs/dead.arc"/>
 				
+				<file name = "bfb.arc" type = "data" source = "iso/bfb/main.arc"/>
+				<file name = "bfbdead.arc" type = "data" source = "iso/bfb/dead.arc"/>
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/dad/main.arc"/>
 				<file name = "tabim.arc" type = "data" source = "iso/tabim/main.arc"/>

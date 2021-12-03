@@ -11,6 +11,8 @@ all: \
 	iso/bf/dead.arc \
 	iso/bfs/main.arc \
 	iso/bfs/dead.arc \
+	iso/bfb/main.arc \
+	iso/bfb/dead.arc \
 	iso/bf/weeb.arc \
 	iso/dad/main.arc \
 	iso/tabim/main.arc \
@@ -40,6 +42,8 @@ iso/bf/weeb.arc: iso/bf/weeb0.tim iso/bf/weeb1.tim
 iso/bfs/main.arc: iso/bfs/idle.tim iso/bfs/hit0.tim iso/bfs/miss0.tim iso/bfs/hit1.tim iso/bfs/miss1.tim iso/bfs/peace.tim iso/bfs/dead0.tim
 iso/bfs/dead.arc: iso/bfs/dead1.tim iso/bfs/dead2.tim iso/bfs/retry.tim
 
+iso/bfb/main.arc: iso/bfb/idle.tim iso/bfb/hit0.tim iso/bfb/miss0.tim iso/bfb/hit1.tim iso/bfb/miss1.tim iso/bfb/peace.tim iso/bfb/dead0.tim
+iso/bfb/dead.arc: iso/bfb/dead1.tim iso/bfb/dead2.tim iso/bfb/retry.tim
 # Dad
 iso/dad/main.arc: iso/dad/idle0.tim iso/dad/idle1.tim iso/dad/idle2.tim iso/dad/idle3.tim iso/dad/left.tim iso/dad/left1.tim iso/dad/left2.tim iso/dad/left3.tim iso/dad/down.tim iso/dad/down1.tim iso/dad/down2.tim iso/dad/down3.tim iso/dad/up.tim iso/dad/up1.tim iso/dad/up2.tim iso/dad/up3.tim iso/dad/right.tim iso/dad/right1.tim iso/dad/right2.tim iso/dad/right3.tim
 
